@@ -13,7 +13,18 @@ const categories = [
   { category: "Sunglasses", _id: "90nv903h8vh" },
 ];
 
-const products = [];
+const products = [
+  {
+    price: 1223,
+    name: "Sample...",
+    _id: "eoie9envi9ev",
+    images: [
+      {
+        uri: "https://m.media-amazon.com/images/I/61dV53UuRVS.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      },
+    ],
+  },
+];
 
 const Home = () => {
   const [category, setCategory] = useState("");
