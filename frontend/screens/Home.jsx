@@ -6,6 +6,7 @@ import { defaultStyle, colors } from "../styles/styles";
 import Header from "../components/Header.jsx";
 import SearchModal from "../components/SearchModal.jsx";
 import ProductCard from "../components/ProductCard.jsx";
+import { useNavigation } from "@react-navigation/native";
 
 const categories = [
   { category: "Men shoes", _id: "9efh9fhnvr9j" },
@@ -18,6 +19,7 @@ const products = [
   {
     price: 1223,
     name: "Sample...",
+    stock: 23,
     _id: "eoie9envi9ev",
     images: [
       {
@@ -31,6 +33,8 @@ const Home = () => {
   const [category, setCategory] = useState("");
   const [activeSearch, setActiveSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigation()
 
   const categoryButtonHandler = (id) => {
     setCategory(id);
@@ -125,6 +129,7 @@ const Home = () => {
                 id={item._id}
                 image={item.images[0]?.uri}
                 addToCartHandler={item.addToCartHandler}
+                navigate={navigate}
                 i={index}
               />
             ))}
