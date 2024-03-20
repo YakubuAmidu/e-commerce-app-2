@@ -15,7 +15,7 @@ const categories = [
 const [category, setCategory] = useState("");
 
 const categoryButtonHandler = (id) => {
-  console.log(id);
+  setCategory(id);
 };
 
 const Home = () => {
@@ -61,19 +61,27 @@ const Home = () => {
             <Button
               key={item._id}
               style={{
-                backgroundColor: colors.color5,
+                backgroundColor:
+                  category === item._id ? colors.color1 : colors.color5,
                 borderRadius: 100,
                 margin: 5,
               }}
               onPress={() => categoryButtonHandler(item._id)}
             >
-              <Text style={{ fontSize: 12, coolor: "gray" }}>
+              <Text
+                style={{
+                  fontSize: 12,
+                  coolor: category === item._id ? colors.color2 : "gray",
+                }}
+              >
                 {item.category}
               </Text>
             </Button>
           ))}
         </ScrollView>
       </View>
+
+      
     </View>
   );
 };
