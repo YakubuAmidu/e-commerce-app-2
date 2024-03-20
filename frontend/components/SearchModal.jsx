@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { Searchbar } from "react-native-paper";
 
 import { useNavigation } from "@react-navigation/native";
@@ -21,6 +21,20 @@ const SearchModal = ({
   products = [],
 }) => {
   const navigate = useNavigation();
+
+  const backAction = () => {
+    setSearchQuery("");
+    setActiveSearch(false);
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () => {
+      BackHandler.removeEventListener("hardwareBackPress", backAction);
+    };
+  }, []);
 
   return (
     <View
@@ -93,6 +107,13 @@ const SearchItem = ({ name, price, imgSrc, handler }) => (
           borderTopRightRadius: 20,
         }}
       />
+
+      <View style={{ width: "80%", paddingHorizontal: 30 }}>
+        <Text numberOfLines={1}>{name}</Text>
+        <Headline numberOfLines={1} style={{ fontWeight: "900" }}>
+          $ {price}
+        </Headline>
+      </View>
     </View>
   </TouchableOpacity>
 );
