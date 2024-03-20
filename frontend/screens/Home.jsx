@@ -109,6 +109,12 @@ const Home = () => {
         </View>
 
         {/*Products*/}
+        <View style={{ flex: 1 }}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          ></ScrollView>
+        </View>
       </View>
     </Fragment>
   );
