@@ -87,6 +87,10 @@ const SearchItem = ({ name, price, imgSrc, handler }) => (
           height: 80,
           position: "absolute",
           resizeMode: "contain",
+          top: -15,
+          left: 10,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
         }}
       />
     </View>
