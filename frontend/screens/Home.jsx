@@ -1,29 +1,24 @@
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { Avatar } from "react-native-paper";
 
 import { defaultStyle, colors } from "../styles/styles";
 import Header from "../components/Header";
 
-const Home = () => {
-  const categories = [
-    {
-      category: "Shoes",
-      _id: "e00ej9whf8ee8",
-    },
-    {
-      category: "Sunglasses",
-      _id: "e00ej9wiebguriefuur",
-    },
-    {
-      category: "Bags",
-      _id: "e038fhgvruv84",
-    },
-    {
-      category: "Makeup",
-      _id: "e00e8fhvr84efhgr8",
-    },
-  ];
+const categories = [
+  { category: "Men shoes", _id: "9efh9fhnvr9j" },
+  { category: "Bags", _id: "9n9hevnrh8rj" },
+  { category: "Womens makeup", _id: "einoiwe[8939efon" },
+  { category: "Sunglasses", _id: "90nv903h8vh" },
+];
 
+const [category, setCategory] = useState("");
+
+const categoryButtonHandler = (id) => {
+  console.log(id);
+};
+
+const Home = () => {
   return (
     <View style={defaultStyle}>
       <Header />
@@ -70,6 +65,7 @@ const Home = () => {
                 borderRadius: 100,
                 margin: 5,
               }}
+              onPress={() => categoryButtonHandler(item._id)}
             >
               <Text style={{ fontSize: 12, coolor: "gray" }}>
                 {item.category}
