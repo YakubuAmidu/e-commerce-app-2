@@ -26,12 +26,14 @@ const Home = () => {
 
   return (
     <Fragment>
-      <SearchModal
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        setActiveSearch={setActiveSearch}
-        products={products}
-      />
+      {activeSearch && (
+        <SearchModal
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          setActiveSearch={setActiveSearch}
+          products={products}
+        />
+      )}
 
       <View style={defaultStyle}>
         <Header />
