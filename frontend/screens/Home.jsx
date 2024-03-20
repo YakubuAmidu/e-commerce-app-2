@@ -5,6 +5,7 @@ import { Avatar } from "react-native-paper";
 import { defaultStyle, colors } from "../styles/styles";
 import Header from "../components/Header.jsx";
 import SearchModal from "../components/SearchModal.jsx";
+import ProductCard from "../components/ProductCard.jsx";
 
 const categories = [
   { category: "Men shoes", _id: "9efh9fhnvr9j" },
@@ -33,6 +34,10 @@ const Home = () => {
 
   const categoryButtonHandler = (id) => {
     setCategory(id);
+  };
+
+  const addToCartHandler = (id) => {
+    console.log("Add to cart...");
   };
 
   return (
@@ -110,10 +115,20 @@ const Home = () => {
 
         {/*Products*/}
         <View style={{ flex: 1 }}>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          ></ScrollView>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {products.map((item, index) => (
+              <ProductCard
+                stock={item.stock}
+                name={item.name}
+                price={item.price}
+                key={item._id}
+                id={item._id}
+                image={item.images[0]?.uri}
+                addToCartHandler={item.addToCartHandler}
+                i={index}
+              />
+            ))}
+          </ScrollView>
         </View>
       </View>
     </Fragment>
