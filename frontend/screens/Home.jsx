@@ -27,6 +27,18 @@ const products = [
       },
     ],
   },
+
+  {
+    price: 1223,
+    name: "Macbook pro...",
+    stock: 23,
+    _id: "eivnieufgvnbie9847r",
+    images: [
+      {
+        uri: "https://m.media-amazon.com/images/I/61dV53UuRVS.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      },
+    ],
+  },
 ];
 
 const Home = () => {

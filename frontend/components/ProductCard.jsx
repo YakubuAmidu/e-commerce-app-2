@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
+import { Button } from "react-native-paper";
 import { colors } from "../styles/styles";
 
 const ProductCard = ({
@@ -12,7 +13,10 @@ const ProductCard = ({
   navigate,
 }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={1}
+      onPress={() => navigate.navigate("productdetails", { id })}
+    >
       <View
         style={{
           elevation: 5,
@@ -58,7 +62,7 @@ const ProductCard = ({
           <Text
             style={{
               color: i % 2 === 0 ? colors.color2 : colors.color3,
-              fontWeight: '700',
+              fontWeight: "700",
               fontSize: 20,
             }}
           >
@@ -66,7 +70,22 @@ const ProductCard = ({
           </Text>
         </View>
 
-        
+        <TouchableOpacity
+          style={{
+            backgroundColor: i % 2 === 0 ? colors.color2 : colors.color3,
+            borderRadius: 0,
+            borderBottomRightRadius: 20,
+            borderBottomLeftRadius: 20,
+            width: "100%",
+          }}
+        >
+          <Button
+            onPress={() => addToCardHandler(id, stock)}
+            textColor={i % 2 === 0 ? colors.color1 : colors.color2}
+          >
+            Add to cart
+          </Button>
+        </TouchableOpacity>
       </View>
     </TouchableOpacity>
   );
