@@ -6,6 +6,8 @@ import { defaultStyle, colors } from "../styles/styles";
 import Header from "../components/Header.jsx";
 import SearchModal from "../components/SearchModal.jsx";
 import ProductCard from "../components/ProductCard.jsx";
+import Footer from "../components/Footer.jsx";
+
 import { useNavigation } from "@react-navigation/native";
 
 const categories = [
@@ -46,7 +48,7 @@ const Home = () => {
   const [activeSearch, setActiveSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const navigate = useNavigation()
+  const navigate = useNavigation();
 
   const categoryButtonHandler = (id) => {
     setCategory(id);
@@ -148,6 +150,8 @@ const Home = () => {
           </ScrollView>
         </View>
       </View>
+
+      <Footer activeRoute={"home"} />
     </Fragment>
   );
 };
