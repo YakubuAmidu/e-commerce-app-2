@@ -8,9 +8,24 @@ import { colors } from "../styles/styles";
 const Footer = ({ activeRoute = "home" }) => {
   const navigate = useNavigate();
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
-  const navigationHandler = (key) => {};
+  const navigationHandler = (key) => {
+    switch (key) {
+      case 0:
+        navigate.navigate("home");
+        break;
+      case 1:
+        navigate.navigate("cart");
+        break;
+      case 2:
+        if (isAuthenticated) navigate.navigate("profile");
+        else navigate.navigate("login");
+      default:
+        navigate.navigate("home");
+        break;
+    }
+  };
 
   const avatarOptions = {
     color: colors.color2,
@@ -66,12 +81,7 @@ const Footer = ({ activeRoute = "home" }) => {
             activeOpacity={0.8}
             onPress={() => navigationHandler(0)}
           >
-            <Avatar.Icon
-              color={colors.color2}
-              size={50}
-              style={{ backgroundColor: colors.color1 }}
-              icon={activeRoute === "home" ? "home" : "home-outline"}
-            />
+            {...avatarOptions}
           </TouchableOpacity>
         </View>
       </View>
