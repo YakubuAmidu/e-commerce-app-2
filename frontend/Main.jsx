@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text, SafeAreaView, StatusBar, Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/stack";
 
