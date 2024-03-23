@@ -12,6 +12,12 @@ const Footer = ({ activeRoute = "home" }) => {
 
   const navigationHandler = (key) => {};
 
+  const avatarOptions = {
+    color: colors.color2,
+    size: 50,
+    backgroundColor: colors.color1,
+  };
+
   return (
     <View
       style={{
@@ -25,28 +31,50 @@ const Footer = ({ activeRoute = "home" }) => {
           activeOpacity={0.8}
           onPress={() => navigationHandler(1)}
         >
-          <Avatar.Icon
-            size={50}
-            color={colors.color2}
-            style={{ backgroundColor: colors.color1 }}
-            icon={activeRoute === "cart" ? "shopping" : "shopping-outline"}
-          />
+          {...avatarOptions}
         </TouchableOpacity>
 
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => navigationHandler(2)}
         >
-          <Avatar.Icon
-            size={50}
-            color={colors.color2}
-            style={{ backgroundColor: colors.color1 }}
-            icon={activeRoute === "profile" ? "account" : "shopping-outline"}
-          />
+          {...avatarOptions}
         </TouchableOpacity>
       </View>
 
-      <View></View>
+      <View
+        style={{
+          position: "absolute",
+          width: 80,
+          height: 80,
+          backgroundColor: colors.color2,
+          borderRadius: 100,
+          alignItems: "center",
+          justifyContent: "center",
+          top: -50,
+          alignSelf: "center",
+        }}
+      >
+        <View
+          style={{
+            borderRadius: 100,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigationHandler(0)}
+          >
+            <Avatar.Icon
+              color={colors.color2}
+              size={50}
+              style={{ backgroundColor: colors.color1 }}
+              icon={activeRoute === "home" ? "home" : "home-outline"}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
