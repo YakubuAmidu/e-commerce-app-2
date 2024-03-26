@@ -1,6 +1,14 @@
 import { useRef } from "react";
-import { Dimensions, Image, StyleSheet } from "react-native";
-import { View, Text, Dimensions } from "react-native";
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+} from "react-native";
+
+import { Avatar } from "react-native-paper";
 
 import Carousel from "react-native-snap-carousel";
 
@@ -67,6 +75,31 @@ const ProductDetails = ({ route: { params } }) => {
         >
           {description}
         </Text>
+
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            paddingHorizontal: 5,
+          }}
+        >
+          <Text style={{ color: colors.color3, fontWeight: "100" }}>
+            Quantity
+          </Text>
+          <View
+            style={{
+              width: 80,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <TouchableOpacity>
+              <Avatar.Icon icon={""} />
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     </View>
   );
