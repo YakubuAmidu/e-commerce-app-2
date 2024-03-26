@@ -12,6 +12,11 @@ const ITEM_WIDTH = SLIDER_WIDTH;
 
 const ProductDetails = ({ route: { params } }) => {
   console.log(params.id);
+
+  const name = "Macbook Pro";
+  const description = "This is the macbook pro in the market...";
+  const price = 500;
+
   const isCarousel = useRef(null);
 
   const images = [
@@ -30,6 +35,7 @@ const ProductDetails = ({ route: { params } }) => {
       style={{ ...defaultStyle, padding: 0, backgroundColor: colors.color1 }}
     >
       <Header back={true} />
+
       {/*Carousel*/}
       <Carousel
         layout="stack"
@@ -39,6 +45,29 @@ const ProductDetails = ({ route: { params } }) => {
         data={images}
         renderItem={CarouselCardItem}
       />
+      <View
+        style={{
+          backgroundColor: colors.color1,
+          flex: 1,
+          padding: 35,
+          marginTop: -380,
+          borderTopLeftRadius: 55,
+          borderTopRightRadius: 55,
+        }}
+      >
+        <Text numberOfLines={2} style={{ fontSize: 25 }}>
+          {name}
+        </Text>
+
+        <Text style={{ fontSize: 18, fontWeight: "900" }}>{price}</Text>
+
+        <Text
+          numberOfLines={8}
+          style={{ letterSpacing: 1, lineHeight: 20, marginVertical: 15 }}
+        >
+          {description}
+        </Text>
+      </View>
     </View>
   );
 };
