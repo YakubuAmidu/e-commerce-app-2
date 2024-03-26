@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import React, { useState } from "react";
+
 import { Avatar } from "react-native-paper";
 
 import Carousel from "react-native-snap-carousel";
@@ -20,6 +22,8 @@ const ITEM_WIDTH = SLIDER_WIDTH;
 
 const ProductDetails = ({ route: { params } }) => {
   console.log(params.id);
+
+  const [quantity, setQuantity] = useSate(1);
 
   const name = "Macbook Pro";
   const description = "This is the macbook pro in the market...";
@@ -96,8 +100,32 @@ const ProductDetails = ({ route: { params } }) => {
             }}
           >
             <TouchableOpacity>
-              <Avatar.Icon icon={""} />
+              <Avatar.Icon
+                icon={"minus"}
+                size={20}
+                style={{
+                  borderRadius: 5,
+                  backgroundColor: colors.color5,
+                  height: 25,
+                  width: 25,
+                }}
+              />
             </TouchableOpacity>
+
+            <Text
+              style={{
+                backgroundColor: colors.color4,
+                height: 25,
+                width: 25,
+                textAlignVertical: "center",
+                textAlign: "center",
+                borderWidth: 1,
+                borderRadius: 5,
+                borderColor: colors.color5,
+              }}
+            >
+              {quantity}
+            </Text>
           </View>
         </View>
       </View>
