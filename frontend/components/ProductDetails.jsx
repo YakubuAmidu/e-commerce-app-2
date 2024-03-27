@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import { Avatar } from "react-native-paper";
 
 import Carousel from "react-native-snap-carousel";
+import Toast from "react-native-toast-message";
 
 import { colors, defaultStyle } from "../styles/styles";
 import Header from "./Header.jsx";
@@ -62,6 +63,19 @@ const ProductDetails = ({ route: { params } }) => {
   const decrementQty = () => {
     if (quantity <= 1) return;
     setQuantity((prev) => prev - 1);
+  };
+
+  const addToCartHandler = () => {
+    if (stock === 0)
+      return Toast.show({
+        type: "error",
+        text1: "out of stock",
+        text2: "This is text 2",
+      });
+    Toast.show({
+      type: "success",
+      text1: "Added to cart",
+    });
   };
 
   return (
@@ -133,8 +147,10 @@ const ProductDetails = ({ route: { params } }) => {
           </View>
         </View>
 
-        <TouchableOpacity>
-          <Button>Add to cart</Button>
+        <TouchableOpacity activeOpacity={0.8} onPress={addToCartHandler}>
+          <Button icon={"cart"} style={style.btn} textColor={colors.color2}>
+            Add to cart
+          </Button>
         </TouchableOpacity>
       </View>
     </View>
@@ -167,6 +183,12 @@ const style = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: colors.color5,
+  },
+  btn: {
+    backgroundColor: colors.color3,
+    borderRadius: 100,
+    padding: 5,
+    marginVertical: 35,
   },
 });
 
