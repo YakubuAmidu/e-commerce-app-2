@@ -20,6 +20,16 @@ import Header from "./Header.jsx";
 const SLIDER_WIDTH = Dimensions.get("window").width;
 const ITEM_WIDTH = SLIDER_WIDTH;
 
+const iconOptions = {
+  size: 20,
+  style: {
+    borderRadius: 5,
+    backgroundColor: colors.color5,
+    height: 25,
+    width: 25,
+  },
+};
+
 const ProductDetails = ({ route: { params } }) => {
   console.log(params.id);
 
@@ -28,6 +38,8 @@ const ProductDetails = ({ route: { params } }) => {
   const name = "Macbook Pro";
   const description = "This is the macbook pro in the market...";
   const price = 500;
+
+  const stock = 5;
 
   const isCarousel = useRef(null);
 
@@ -41,6 +53,16 @@ const ProductDetails = ({ route: { params } }) => {
       uri: "https://m.media-amazon.com/images/I/61dV53UuRVS.__AC_SX300_SY300_QL70_FMwebp_.jpg",
     },
   ];
+
+  const incrementQty = () => {
+    if (stock <= quantity) return;
+    setQuantity((prev) => prev + 1);
+  };
+
+  const decrementQty = () => {
+    if (quantity <= 1) return;
+    setQuantity((prev) => prev - 1);
+  };
 
   return (
     <View
@@ -99,35 +121,21 @@ const ProductDetails = ({ route: { params } }) => {
               alignItems: "center",
             }}
           >
-            <TouchableOpacity>
-              <Avatar.Icon
-                icon={"minus"}
-                size={20}
-                style={{
-                  borderRadius: 5,
-                  backgroundColor: colors.color5,
-                  height: 25,
-                  width: 25,
-                }}
-              />
+            <TouchableOpacity onPress={decrementQty}>
+              <Avatar.Icon icon={"minus"} {...iconOptions} />
             </TouchableOpacity>
 
-            <Text
-              style={{
-                backgroundColor: colors.color4,
-                height: 25,
-                width: 25,
-                textAlignVertical: "center",
-                textAlign: "center",
-                borderWidth: 1,
-                borderRadius: 5,
-                borderColor: colors.color5,
-              }}
-            >
-              {quantity}
-            </Text>
+            <Text style={style.quantityStyle}>{quantity}</Text>
+
+            <TouchableOpacity onPress={incrementQty}>
+              <Avatar.Icon icon={"plus"} {...iconOptions} />
+            </TouchableOpacity>
           </View>
         </View>
+
+        <TouchableOpacity>
+          <Button>Add to cart</Button>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -149,6 +157,16 @@ const style = StyleSheet.create({
   image: {
     width: ITEM_WIDTH,
     resizeMode: "contain",
+  },
+  quantityStyle: {
+    backgroundColor: colors.color4,
+    height: 25,
+    width: 25,
+    textAlignVertical: "center",
+    textAlign: "center",
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: colors.color5,
   },
 });
 
