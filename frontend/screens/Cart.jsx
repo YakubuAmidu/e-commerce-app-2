@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { Button } from "react-native-paper";
 
@@ -30,9 +31,15 @@ const cartItems = [
 ];
 
 const Cart = () => {
-  const decrementHandler = () => {};
+  const navigate = useNavigation();
 
-  const incrementHandler = () => {};
+  const incrementHandler = (id, qty, stock) => {
+    console.log("Increasing", id, qty);
+  };
+
+  const decrementHandler = (id, qty) => {
+    console.log("Decreasing", id, qty);
+  };
 
   return (
     <View style={{ ...defaultStyle, padding: 0 }}>
@@ -46,7 +53,7 @@ const Cart = () => {
         containerStyle={{ paddingTop: 75, marginLeft: 35 }}
       />
       <View style={{ paddingVertical: 20, flex: 1 }}>
-        <ScrollView>
+        <ScrollView showsHorizontalScrollIndicator={false}>
           {cartItems.map((i, index) => (
             <CatItem
               key={i.product}
@@ -74,7 +81,11 @@ const Cart = () => {
         <Text>$ 500</Text>
       </View>
 
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={
+          cartItems.length > 0 ? () => navigate.navigate("confirmorder") : null
+        }
+      >
         <Button
           icon={"cart"}
           textColor={colors.color2}

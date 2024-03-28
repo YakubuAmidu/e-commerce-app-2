@@ -23,16 +23,7 @@ const CartItem = ({
           borderBottomRightRadius: 100,
         }}
       >
-        <Image
-          source={{ uri: imgSrc }}
-          style={{
-            width: 200,
-            height: "100%",
-            resizeMode: "contain",
-            top: "-20%",
-            left: "10%",
-          }}
-        />
+        <Image source={{ uri: imgSrc }} style={styles.img} />
       </View>
 
       <View style={{ width: "40%", paddingHorizontal: 25 }}>
@@ -74,6 +65,13 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     width: "20%",
     height: 80,
+  },
+  img: {
+    width: 200,
+    height: "100%",
+    resizeMode: "contain",
+    top: "-20%",
+    left: "10%",
   },
 });
 
