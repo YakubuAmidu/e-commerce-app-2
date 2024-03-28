@@ -13,6 +13,9 @@ const cartItems = [
     image:
       "https://t4.ftcdn.net/jpg/02/28/32/33/360_F_228323384_jgQfK454eYmShdFytnLz082RE5HEdLzD.jpg",
     product: "oe9e9vn9evhr9e4vrhvb",
+    stock: 3,
+    price: 3993,
+    quantity: 2,
   },
 ];
 
