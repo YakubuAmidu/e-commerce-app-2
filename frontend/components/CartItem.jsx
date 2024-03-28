@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import { Avatar } from "react-native-paper";
+import { iconOptions } from "./ProductDetails";
 
 const CartItem = ({
   name,
@@ -37,6 +39,37 @@ const CartItem = ({
         <Text numberOfLines={1} style={{ fontSize: 17 }}>
           {name}
         </Text>
+        <Text numberOfLines={1} style={{ fontSize: 17, fontWeight: "900" }}>
+          $ {price}
+        </Text>
+      </View>
+
+      <View
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          alignSelf: "center",
+          width: "20%",
+          height: 80,
+        }}
+      >
+        <TouchableOpacity onPress={decrementHandler(id, qty)}>
+          <Avatar.Icon icon={"minus"} {...iconOptions} />
+          <Text
+            style={{
+              backgroundColor: colors.color4,
+              height: 25,
+              width: 25,
+              textAlignVertical: "center",
+              textAlign: "center",
+              borderWidth: 1,
+              borderRadius: 5,
+              borderColor: colors.color5,
+            }}
+          >
+            {qty}
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
