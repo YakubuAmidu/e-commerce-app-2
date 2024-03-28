@@ -6,6 +6,7 @@ import { defaultStyle, colors } from "../styles/styles";
 import Header from "../components/Header.jsx";
 import SearchModal from "../components/SearchModal.jsx";
 import ProductCard from "../components/ProductCard.jsx";
+import Heading from "../components/Heading.jsx";
 import Footer from "../components/Footer.jsx";
 
 import { useNavigation } from "@react-navigation/native";
@@ -82,10 +83,7 @@ const Home = () => {
           }}
         >
           {/*Heading*/}
-          <View>
-            <Text style={{ fontSize: 25 }}>Our</Text>
-            <Text style={{ fontSize: 25, fontWeight: "900" }}>Products</Text>
-          </View>
+          <Heading text1="Our" text2="Products" />
 
           {/*Search Bar*/}
           <View>
