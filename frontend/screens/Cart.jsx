@@ -9,7 +9,7 @@ import Header from "../components/Header.jsx";
 import Heading from "../components/Heading.jsx";
 import CatItem from "../components/CartItem.jsx";
 
-const cartItems = [
+export const cartItems = [
   {
     name: "Macbook Pro",
     image:
