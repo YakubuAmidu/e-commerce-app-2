@@ -21,11 +21,22 @@ const CartItem = ({
           borderBottomRightRadius: 100,
         }}
       >
-        <Image source={{ uri: imgSrc }} style={{ width: 200, heitght: '100%', resizeMode="contain" top: '-20%', left: '10%' }} />
+        <Image
+          source={{ uri: imgSrc }}
+          style={{
+            width: 200,
+            height: "100%",
+            resizeMode: "contain",
+            top: "-20%",
+            left: "10%",
+          }}
+        />
       </View>
 
-      <View style={{ width: '40%', paddingHorizontal: 25, }}>
-        <Text numberOfLines={1} style={{ fontSize: 17 }}>{name}</Text>
+      <View style={{ width: "40%", paddingHorizontal: 25 }}>
+        <Text numberOfLines={1} style={{ fontSize: 17 }}>
+          {name}
+        </Text>
       </View>
     </View>
   );
