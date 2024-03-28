@@ -20,8 +20,14 @@ const ConfirmOrder = () => {
 
       <View style={{ paddingVertical: 20, flexx: 1 }}>
         <ScrollView>
-          {cartItems.map((item, index) => (
-            <ConfirmOrderItem />
+          {cartItems.map((i) => (
+            <ConfirmOrderItem
+              key={i.product}
+              price={i.price}
+              name={i.name}
+              image={i.image}
+              quantity={i.quantity}
+            />
           ))}
         </ScrollView>
       </View>
