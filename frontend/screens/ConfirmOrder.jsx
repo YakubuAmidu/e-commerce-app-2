@@ -35,4 +35,18 @@ const ConfirmOrder = () => {
   );
 };
 
+const PriceTag = ({ heading, value }) => {
+  <View
+    style={{
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      marginVertical: 5,
+    }}
+  >
+    <Text style={{ fontWeight: "800" }}>{heading}</Text>
+    <Text>$ {value}</Text>
+  </View>;
+};
+
 export default ConfirmOrder;
