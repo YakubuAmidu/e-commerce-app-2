@@ -1,4 +1,6 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Button } from "react-native-paper";
 import React from "react";
 
 import Header from "../components/Header.jsx";
@@ -7,6 +9,13 @@ import { defaultStyle } from "../styles/styles.js";
 import { cartItems } from "./Cart";
 
 const ConfirmOrder = () => {
+  const navigate = useNavigation();
+
+  const itemPrice = 400;
+  const shippingCharges = 200;
+  const tax = 0.18 * itemPrice;
+  const totalAmount = itemPrice + shippingCharges + tax;
+
   return (
     <View style={defaultStyle}>
       <Header back={true} />
@@ -31,6 +40,35 @@ const ConfirmOrder = () => {
           ))}
         </ScrollView>
       </View>
+
+      <PriceTag heading={"subtotal"} value={itemPrice} />
+      <PriceTag heading={"shipping"} value={shippingCharges} />
+      <PriceTag heading={"tax"} value={tax} />
+      <PriceTag heading={"total"} value={totalAmount} />
+
+      <TouchableOpacity
+        onPress={() =>
+          navigate.navigate("payment", {
+            itemPrice,
+            shippingCharges,
+            tax,
+            totalAmount,
+          })
+        }
+      >
+        <Button
+          style={{
+            backgroundColor: colors.color3,
+            borderRadius: 100,
+            padding: 5,
+            margin: 10,
+          }}
+          textColor={colors.color2}
+          icon={"chevron-right"}
+        >
+          Payment
+        </Button>
+      </TouchableOpacity>
     </View>
   );
 };
