@@ -18,6 +18,11 @@ const ConfirmOrderItem = ({ quantity, price, image, name }) => {
         style={{ width: 50, height: 50, resizeMode: "contain" }}
       />
       <Text>{name}</Text>
+      <View style={{ flexDirection: "row" }}>
+        <Text>{quantity}</Text>
+        <Text style={{ marginHorizontal: 10 }}>x</Text>
+        <Text>$ {price}</Text>
+      </View>
     </View>
   );
 };
