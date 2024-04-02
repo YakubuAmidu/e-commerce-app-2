@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { defaultStyle, colors } from "../styles/styles";
 
 import Header from "../components/Header.jsx";
 import Heading from "../components/Heading.jsx";
-import { RadioButton } from "react-native-paper";
+import { RadioButton, Button } from "react-native-paper";
 
 const Payment = ({ navigation, route }) => {
   const navigate = useNavigation();
@@ -35,6 +35,18 @@ const Payment = ({ navigation, route }) => {
           </View>
         </RadioButton.Group>
       </View>
+
+      <TouchableOpacity>
+        <Button
+          style={styles.btn}
+          textColor={colors.color2}
+          icon={
+            paymentMethod === "COD" ? "check-circle" : "circle-multiple-outline"
+          }
+        >
+          {paymentMethod === "COD" ? "Place order" : "Pay"}
+        </Button>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -59,6 +71,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textTransform: "uppercase",
     color: colors.color2,
+  },
+  btn: {
+    backgroundColor: colors.color3,
+    borderRadius: 100,
+    margin: 10,
+    padding: 5,
   },
 });
 
