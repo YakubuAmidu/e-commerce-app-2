@@ -4,6 +4,12 @@ import { TextInput } from "react-native-paper";
 
 import { defaultStyle, colors, inputStyling } from "../styles/styles";
 
+const inputOptions = {
+  style: inputStyling,
+  mode: "outlined",
+  activeOutlineColor: colors.color1,
+};
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,11 +21,7 @@ const Login = () => {
         <Text style={styles.heading}>Login</Text>
       </View>
       <View style={styles.container}>
-        <TextInput
-          style={inputStyling}
-          mode={"outlined"}
-          activeOutlineColor={colors.color1}
-        />
+        <TextInput {...inputOptions} placeholder="Email..." />
       </View>
     </View>
   );
