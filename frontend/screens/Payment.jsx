@@ -7,10 +7,10 @@ import Heading from "../components/Heading.jsx";
 import { RadioButton, Button } from "react-native-paper";
 
 const Payment = ({ navigation, route }) => {
-  const navigate = useNavigation();
-
   const [paymentMethod, setPaymentMethod] = useState("COD");
   console.log(paymentMethod);
+
+  const isAuthenticated = true;
 
   return (
     <View style={{ defaultStyle }}>
