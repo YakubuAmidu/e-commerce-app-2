@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { TextInput } from "react-native-paper";
+import { TextInput, Button } from "react-native-paper";
 
 import { defaultStyle, colors, inputStyling } from "../styles/styles";
 
@@ -10,9 +10,15 @@ const inputOptions = {
   activeOutlineColor: colors.color1,
 };
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const loading = false;
+
+  const submitHandler = () => {
+    alert("Yeah");
+  };
 
   return (
     <View style={defaultStyle}>
@@ -31,10 +37,27 @@ const Login = () => {
         <TextInput
           {...inputOptions}
           placeholder="Password..."
-          keyboardType="password"
+          secureTextEntry={true}
           value={password}
           onChange={setPassword}
         />
+
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigation.navigate("forgotpassword")}
+        >
+          <Text style={styles.forget}>Forgot Password ? </Text>
+        </TouchableOpacity>
+
+        <Button
+          loading={loading}
+          textColor={colors.color2}
+          style={styles.btn}
+          disabled={email === "" || password === ""}
+          onPress={submitHandler}
+        >
+          Login
+        </Button>
       </View>
     </View>
   );
@@ -57,6 +80,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 10,
     justifyContent: "center",
+  },
+  forget: {
+    color: colors.color2,
+    marginHorizontal: 20,
+    marginVertical: 10,
+    alignSelf: "flex-end",
+    fontWeight: 100,
+  },
+  btn: {
+    backgroundColor: colors.color1,
+    margin: 20,
+    padding: 10,
   },
 });
 export default Login;
