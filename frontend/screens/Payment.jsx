@@ -12,6 +12,14 @@ const Payment = ({ navigation, route }) => {
 
   const isAuthenticated = true;
 
+  const redirecteToLogin = () => {
+    navigation.navigate("login");
+  };
+
+  const codHandler = () => {};
+
+  const onlineHandler = () => {};
+
   return (
     <View style={{ defaultStyle }}>
       <Header back={true} />
@@ -36,7 +44,15 @@ const Payment = ({ navigation, route }) => {
         </RadioButton.Group>
       </View>
 
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={
+          !isAuthenticated
+            ? redirecteToLogin
+            : paymentMethod === "COD"
+            ? codHandler
+            : onlineHandler
+        }
+      >
         <Button
           style={styles.btn}
           textColor={colors.color2}
