@@ -21,7 +21,20 @@ const Login = () => {
         <Text style={styles.heading}>Login</Text>
       </View>
       <View style={styles.container}>
-        <TextInput {...inputOptions} placeholder="Email..." />
+        <TextInput
+          {...inputOptions}
+          placeholder="Email..."
+          keyboardType="email address"
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          {...inputOptions}
+          placeholder="Password..."
+          keyboardType="password"
+          value={password}
+          onChange={setPassword}
+        />
       </View>
     </View>
   );
