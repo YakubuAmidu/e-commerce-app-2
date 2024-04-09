@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { TextInput, Button } from "react-native-paper";
 
 import { defaultStyle, colors, inputStyling } from "../styles/styles";
@@ -21,54 +21,58 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View style={defaultStyle}>
-      {/* Heading */}
-      <View style={{ marginBottom: 20 }}>
-        <Text style={styles.heading}>Login</Text>
+    <Fragment>
+      <View style={{ ...defaultStyle, backgroundColor: colors.color2 }}>
+        {/* Heading */}
+        <View style={{ marginBottom: 20 }}>
+          <Text style={styles.heading}>Login</Text>
+        </View>
+        <View style={styles.container}>
+          <TextInput
+            {...inputOptions}
+            placeholder="Email..."
+            keyboardType="email address"
+            value={email}
+            onChangeText={setEmail}
+          />
+          <TextInput
+            {...inputOptions}
+            placeholder="Password..."
+            secureTextEntry={true}
+            value={password}
+            onChange={setPassword}
+          />
+
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("forgotpassword")}
+          >
+            <Text style={styles.forget}>Forgot Password ? </Text>
+          </TouchableOpacity>
+
+          <Button
+            loading={loading}
+            textColor={colors.color2}
+            style={styles.btn}
+            disabled={email === "" || password === ""}
+            onPress={submitHandler}
+          >
+            Login
+          </Button>
+
+          <Text style={styles.or}>OR</Text>
+
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("signup")}
+          >
+            <Text style={styles.link}>Sign up</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.container}>
-        <TextInput
-          {...inputOptions}
-          placeholder="Email..."
-          keyboardType="email address"
-          value={email}
-          onChangeText={setEmail}
-        />
-        <TextInput
-          {...inputOptions}
-          placeholder="Password..."
-          secureTextEntry={true}
-          value={password}
-          onChange={setPassword}
-        />
 
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigation.navigate("forgotpassword")}
-        >
-          <Text style={styles.forget}>Forgot Password ? </Text>
-        </TouchableOpacity>
-
-        <Button
-          loading={loading}
-          textColor={colors.color2}
-          style={styles.btn}
-          disabled={email === "" || password === ""}
-          onPress={submitHandler}
-        >
-          Login
-        </Button>
-
-        <Text style={styles.or}>OR</Text>
-
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigation.navigate("signup")}
-        >
-          <Text style={styles.link}>Sign up</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+      <Footer activeRoute="profile" />
+    </Fragment>
   );
 };
 
