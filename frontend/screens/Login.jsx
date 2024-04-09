@@ -58,6 +58,15 @@ const Login = ({ navigation }) => {
         >
           Login
         </Button>
+
+        <Text style={styles.or}>OR</Text>
+
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigation.navigate("signup")}
+        >
+          <Text style={styles.link}>Sign up</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -92,6 +101,20 @@ const styles = StyleSheet.create({
     backgroundColor: colors.color1,
     margin: 20,
     padding: 10,
+  },
+  or: {
+    alignSelf: "center",
+    fontSize: 20,
+    fontWeight: "100",
+    color: colors.color2,
+  },
+  link: {
+    alignSelf: "center",
+    color: colors.color2,
+    fontSize: 18,
+    textTransform: "uppercase",
+    marginVertical: 10,
+    marginHorizontal: 20,
   },
 });
 export default Login;
