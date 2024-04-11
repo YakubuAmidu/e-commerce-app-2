@@ -1,8 +1,14 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React, { useState, Fragment } from "react";
 import { TextInput, Button } from "react-native-paper";
 
-import { defaultStyle, colors, FormHeading } from "../styles/styles";
+import {
+  defaultStyle,
+  colors,
+  FormHeading,
+  inputOptions,
+  formStyles as styles,
+} from "../styles/styles";
 
 const ForgetPassword = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -43,9 +49,9 @@ const ForgetPassword = ({ navigation }) => {
 
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate("signup")}
+            onPress={() => navigation.navigate("login")}
           >
-            <Text style={styles.link}>Sign up</Text>
+            <Text style={styles.link}>Log In</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -55,32 +61,4 @@ const ForgetPassword = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  forget: {
-    color: colors.color2,
-    marginHorizontal: 20,
-    marginVertical: 10,
-    alignSelf: "flex-end",
-    fontWeight: 100,
-  },
-  btn: {
-    backgroundColor: colors.color1,
-    margin: 20,
-    padding: 10,
-  },
-  or: {
-    alignSelf: "center",
-    fontSize: 20,
-    fontWeight: "100",
-    color: colors.color2,
-  },
-  link: {
-    alignSelf: "center",
-    color: colors.color2,
-    fontSize: 18,
-    textTransform: "uppercase",
-    marginVertical: 10,
-    marginHorizontal: 20,
-  },
-});
 export default ForgetPassword;

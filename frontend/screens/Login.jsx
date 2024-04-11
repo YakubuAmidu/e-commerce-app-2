@@ -1,8 +1,13 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React, { useState, Fragment } from "react";
 import { TextInput, Button } from "react-native-paper";
 
-import { defaultStyle, colors, FormHeading } from "../styles/styles";
+import {
+  defaultStyle,
+  colors,
+  FormHeading,
+  formStyles as styles,
+} from "../styles/styles";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
