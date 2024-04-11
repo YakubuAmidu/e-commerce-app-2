@@ -2,19 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState, Fragment } from "react";
 import { TextInput, Button } from "react-native-paper";
 
-import {
-  defaultStyle,
-  colors,
-  inputStyling,
-  FormHeading,
-  FormHeading,
-} from "../styles/styles";
-
-const inputOptions = {
-  style: inputStyling,
-  mode: "outlined",
-  activeOutlineColor: colors.color1,
-};
+import { defaultStyle, colors, FormHeading } from "../styles/styles";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");

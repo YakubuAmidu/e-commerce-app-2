@@ -36,3 +36,9 @@ export const FormHeading = {
     borderRadius: 5,
   },
 };
+
+export const inputOptions = {
+  style: inputStyling,
+  mode: "outlined",
+  activeOutlineColor: colors.color1,
+};

@@ -2,22 +2,10 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState, Fragment } from "react";
 import { TextInput, Button } from "react-native-paper";
 
-import {
-  defaultStyle,
-  colors,
-  inputStyling,
-  FormHeading,
-} from "../styles/styles";
-
-const inputOptions = {
-  style: inputStyling,
-  mode: "outlined",
-  activeOutlineColor: colors.color1,
-};
+import { defaultStyle, colors, FormHeading } from "../styles/styles";
 
 const ForgetPassword = ({ navigation }) => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const loading = false;
 
@@ -30,7 +18,7 @@ const ForgetPassword = ({ navigation }) => {
       <View style={defaultStyle}>
         {/* Heading */}
         <View style={{ marginBottom: 20 }}>
-          <Text style={FormHeading}>Login</Text>
+          <Text style={FormHeading}>Forget Password</Text>
         </View>
         <View style={styles.container}>
           <TextInput
@@ -39,13 +27,6 @@ const ForgetPassword = ({ navigation }) => {
             keyboardType="email address"
             value={email}
             onChangeText={setEmail}
-          />
-          <TextInput
-            {...inputOptions}
-            placeholder="Password..."
-            secureTextEntry={true}
-            value={password}
-            onChange={setPassword}
           />
 
           <TouchableOpacity
