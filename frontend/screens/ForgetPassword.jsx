@@ -29,21 +29,14 @@ const ForgetPassword = ({ navigation }) => {
             onChangeText={setEmail}
           />
 
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigation.navigate("forgotpassword")}
-          >
-            <Text style={styles.forget}>Forgot Password ? </Text>
-          </TouchableOpacity>
-
           <Button
             loading={loading}
             textColor={colors.color2}
             style={styles.btn}
-            disabled={email === "" || password === ""}
+            disabled={email === ""}
             onPress={submitHandler}
           >
-            Login
+            Send OTP
           </Button>
 
           <Text style={styles.or}>OR</Text>
@@ -63,14 +56,6 @@ const ForgetPassword = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: colors.color3,
-    borderRadius: 10,
-    elevation: 10,
-    justifyContent: "center",
-  },
   forget: {
     color: colors.color2,
     marginHorizontal: 20,
