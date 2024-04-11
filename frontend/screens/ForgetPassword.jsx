@@ -17,6 +17,8 @@ const ForgetPassword = ({ navigation }) => {
 
   const submitHandler = () => {
     alert("Yeah");
+    // Will remove this in the future.
+    navigation.navigate("verify");
   };
 
   return (
