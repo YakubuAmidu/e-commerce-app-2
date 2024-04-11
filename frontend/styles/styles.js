@@ -24,3 +24,15 @@ export const InputStyling = StyleSheet.create({
   marginVertical: 10,
   marginHorizontal: 20,
 });
+
+export const FormHeading = {
+  heading: {
+    fontSize: 25,
+    fontWeight: 600,
+    textAlign: "center",
+    backgroundColor: colors.color3,
+    color: colors.color2,
+    padding: 5,
+    borderRadius: 5,
+  },
+};

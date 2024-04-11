@@ -2,7 +2,12 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState, Fragment } from "react";
 import { TextInput, Button } from "react-native-paper";
 
-import { defaultStyle, colors, inputStyling } from "../styles/styles";
+import {
+  defaultStyle,
+  colors,
+  inputStyling,
+  FormHeading,
+} from "../styles/styles";
 
 const inputOptions = {
   style: inputStyling,
@@ -22,10 +27,10 @@ const ForgetPassword = ({ navigation }) => {
 
   return (
     <Fragment>
-      <View style={{ ...defaultStyle, backgroundColor: colors.color2 }}>
+      <View style={defaultStyle}>
         {/* Heading */}
         <View style={{ marginBottom: 20 }}>
-          <Text style={styles.heading}>Login</Text>
+          <Text style={FormHeading}>Login</Text>
         </View>
         <View style={styles.container}>
           <TextInput
@@ -77,15 +82,6 @@ const ForgetPassword = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  heading: {
-    fontSize: 25,
-    fontWeight: 600,
-    textAlign: "center",
-    backgroundColor: colors.color3,
-    color: colors.color2,
-    padding: 5,
-    borderRadius: 5,
-  },
   container: {
     flex: 1,
     padding: 20,
