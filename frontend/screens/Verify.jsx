@@ -37,15 +37,22 @@ const Verify = ({ navigation }) => {
             value={otp}
             onChangeText={setOtp}
           />
+          <TextInput
+            {...inputOptions}
+            placeholder="New password"
+            secureTextEntry={true}
+            value={password}
+            onChangeText={setPassword}
+          />
 
           <Button
             loading={loading}
             textColor={colors.color2}
             style={styles.btn}
-            disabled={email === ""}
+            disabled={otp === "" || password === ""}
             onPress={submitHandler}
           >
-            Send OTP
+            Reset
           </Button>
 
           <Text style={styles.or}>OR</Text>
@@ -54,7 +61,7 @@ const Verify = ({ navigation }) => {
             activeOpacity={0.8}
             onPress={() => navigation.navigate("login")}
           >
-            <Text style={styles.link}>Log In</Text>
+            <Text style={styles.link}>Resend OTP</Text>
           </TouchableOpacity>
         </View>
       </View>
