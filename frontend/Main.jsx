@@ -10,7 +10,8 @@ import ConfirmOrder from "./screens/ConfirmOrder.jsx";
 import Payment from "./screens/Payment.jsx";
 import Login from "./screens/Login.jsx";
 import Cart from "./screens/Cart.jsx";
-import ForgetPassword from "./screens/ForgetPassword";
+import ForgetPassword from "./screens/ForgetPassword.jsx";
+import Verify from "./screens/Verify.jsx";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ const Main = () => {
 
           {/*Password resetting route*/}
           <Stack.Screen name="forgetpassword" component={ForgetPassword} />
+          <Stack.Screen name="verify" component={Verify} />
         </Stack.Group>
       </Stack.Navigator>
 
