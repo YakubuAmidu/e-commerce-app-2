@@ -59,7 +59,7 @@ const Verify = ({ navigation }) => {
 
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate("login")}
+            onPress={() => navigation.navigate("forgetpassword")}
           >
             <Text style={styles.link}>Resend OTP</Text>
           </TouchableOpacity>
