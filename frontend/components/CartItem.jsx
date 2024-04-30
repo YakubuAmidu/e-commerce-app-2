@@ -10,6 +10,7 @@ const CartItem = ({
   stock,
   incrementHandler,
   decrementHandler,
+  navigate,
   index,
   imgSrc,
 }) => {
@@ -27,7 +28,11 @@ const CartItem = ({
       </View>
 
       <View style={{ width: "40%", paddingHorizontal: 25 }}>
-        <Text numberOfLines={1} style={{ fontSize: 17 }}>
+        <Text
+          numberOfLines={1}
+          style={{ fontSize: 17 }}
+          onPress={() => navigation.navigate("productDetails", { id })}
+        >
           {name}
         </Text>
         <Text numberOfLines={1} style={{ fontSize: 17, fontWeight: "900" }}>

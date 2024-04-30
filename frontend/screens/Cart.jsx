@@ -7,7 +7,7 @@ import { Button } from "react-native-paper";
 import { defaultStyle, colors } from "../styles/styles";
 import Header from "../components/Header.jsx";
 import Heading from "../components/Heading.jsx";
-import CatItem from "../components/CartItem.jsx";
+import CartItem from "../components/CartItem.jsx";
 
 export const cartItems = [
   {
@@ -55,8 +55,9 @@ const Cart = () => {
       <View style={{ paddingVertical: 20, flex: 1 }}>
         <ScrollView showsHorizontalScrollIndicator={false}>
           {cartItems.map((i, index) => (
-            <CatItem
+            <CartItem
               key={i.product}
+              navigate={navigate}
               id={i.product}
               name={i.name}
               amount={i.price}

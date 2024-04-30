@@ -24,6 +24,9 @@ const Signup = ({ navigation }) => {
 
   const loading = false;
 
+  const disableBtn =
+    !name || !email || !password || !address || !city || !country || !pinCode;
+
   const submitHandler = () => {
     alert("Yeah");
     // Will remove this in the future.
@@ -47,7 +50,7 @@ const Signup = ({ navigation }) => {
             backgroundColor: colors.color3,
           }}
         >
-          <View style={{ justifyContent: "center" }}>
+          <View style={{ minHeight: 900 }}>
             <Avatar.Image
               style={{ alignSelf: "center", backgroundColor: colors.color1 }}
               size={80}
@@ -115,10 +118,10 @@ const Signup = ({ navigation }) => {
               loading={loading}
               textColor={colors.color2}
               style={styles.btn}
-              disabled={email === ""}
+              disabled={disableBtn}
               onPress={submitHandler}
             >
-              Send OTP
+              Signup
             </Button>
 
             <Text style={styles.or}>OR</Text>
