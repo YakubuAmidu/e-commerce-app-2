@@ -59,12 +59,49 @@ const Signup = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate("camera")}>
               <Button textColor={colors.color1}>Change photo</Button>
             </TouchableOpacity>
+
+            <TextInput
+              {...inputOptions}
+              placeholder="Name..."
+              value={name}
+              onChangeText={setName}
+            />
+
             <TextInput
               {...inputOptions}
               placeholder="Email..."
               keyboardType="email address"
               value={email}
               onChangeText={setEmail}
+            />
+
+            <TextInput
+              {...inputOptions}
+              secureTextEntry={true}
+              placeholder="Password..."
+              value={password}
+              onChangeText={setPassword}
+            />
+
+            <TextInput
+              {...inputOptions}
+              placeholder="Addressl..."
+              value={address}
+              onChangeText={setAddress}
+            />
+
+            <TextInput
+              {...inputOptions}
+              placeholder="Email..."
+              value={city}
+              onChangeText={setCity}
+            />
+
+            <TextInput
+              {...inputOptions}
+              placeholder="Email..."
+              value={pinCode}
+              onChangeText={setPinCode}
             />
 
             <Button
