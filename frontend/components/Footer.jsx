@@ -8,7 +8,7 @@ import { colors } from "../styles/styles";
 const Footer = ({ activeRoute = "home" }) => {
   const navigate = useNavigate();
 
-  const loading = false;
+  const loading = true;
   const isAuthenticated = true;
 
   const navigationHandler = (key) => {
@@ -61,7 +61,7 @@ const Footer = ({ activeRoute = "home" }) => {
             <Avatar.Icon
               {...avatarOptions}
               Icon={
-                isAuthenticated === true
+                isAuthenticated === false
                   ? "login"
                   : activeRoute === "profile"
                   ? "account"
