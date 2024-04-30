@@ -92,14 +92,21 @@ const Signup = ({ navigation }) => {
 
             <TextInput
               {...inputOptions}
-              placeholder="Email..."
+              placeholder="City..."
               value={city}
               onChangeText={setCity}
             />
 
             <TextInput
               {...inputOptions}
-              placeholder="Email..."
+              placeholder="Countryl..."
+              value={country}
+              onChangeText={setCountry}
+            />
+
+            <TextInput
+              {...inputOptions}
+              placeholder="Pincode..."
               value={pinCode}
               onChangeText={setPinCode}
             />
