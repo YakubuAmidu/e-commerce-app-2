@@ -62,7 +62,7 @@ const Signup = ({ navigation }) => {
             <TextInput
               {...inputOptions}
               placeholder="Email..."
-              keyboardType="email address..."
+              keyboardType="email address"
               value={email}
               onChangeText={setEmail}
             />
