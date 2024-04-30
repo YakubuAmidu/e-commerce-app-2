@@ -7,8 +7,10 @@ import {
   colors,
   FormHeading,
   inputOptions,
+  defaultImg,
   formStyles as styles,
 } from "../styles/styles";
+import Footer from "../components/Footer";
 
 const Signup = ({ navigation }) => {
   const [avatar, setAvatar] = useState("");
@@ -53,6 +55,10 @@ const Signup = ({ navigation }) => {
                 uri: avatar ? avatar : defaultImg,
               }}
             />
+
+            <TouchableOpacity onPress={() => navigation.navigate("camera")}>
+              <Button textColor={colors.color1}>Change photo</Button>
+            </TouchableOpacity>
             <TextInput
               {...inputOptions}
               placeholder="Email..."

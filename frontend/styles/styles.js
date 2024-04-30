@@ -79,3 +79,6 @@ export const formStyles = StyleSheet.create({
     marginHorizontal: 20,
   },
 });
+
+export const defaultImg =
+  "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=800";
