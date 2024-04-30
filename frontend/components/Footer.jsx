@@ -55,7 +55,10 @@ const Footer = ({ activeRoute = "home" }) => {
             activeOpacity={0.8}
             onPress={() => navigationHandler(2)}
           >
-            {...avatarOptions}
+            <Avatar.Icon
+              {...avatarOptions}
+              Icon={activeRoute === "profile" ? "account" : "account-outline"}
+            />
           </TouchableOpacity>
         </View>
 
