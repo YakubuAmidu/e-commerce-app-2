@@ -48,7 +48,10 @@ const Footer = ({ activeRoute = "home" }) => {
             activeOpacity={0.8}
             onPress={() => navigationHandler(1)}
           >
-            {...avatarOptions}
+            <Avatar.Icon
+              {...avatarOptions}
+              Icon={activeRoute === "cart" ? "shopping" : "shopping-outline"}
+            />
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -57,7 +60,7 @@ const Footer = ({ activeRoute = "home" }) => {
           >
             <Avatar.Icon
               {...avatarOptions}
-              Icon={activeRoute === "profile" ? "login" : "account-outline"}
+              Icon={activeRoute === "profile" ? "account" : "account-outline"}
             />
           </TouchableOpacity>
         </View>
