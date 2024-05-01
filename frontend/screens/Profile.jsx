@@ -3,6 +3,8 @@ import { View, Text, StyleSheet } from "react-native";
 import { defautStyle, formHeading } from "../styles/styles";
 import { Avatar } from "react-native-paper";
 
+import ButtonBox from "../components/ButtonBox";
+
 const user = {
   name: "Yakubu",
   email: "yakubu@gmail.com",
@@ -10,6 +12,8 @@ const user = {
 
 const Profile = () => {
   const [avatar, setAvatar] = useState("");
+
+  const navigateHandler = () => {};
 
   return (
     <View style={defautStyle}>
@@ -47,7 +51,22 @@ const Profile = () => {
             justifyContent: "space-between",
           }}
         >
-          
+          <ButtonBox
+            handler={navigateHandler}
+            text={"Orders"}
+            icon={"format-list-bulleted-square"}
+          />
+          <ButtonBox
+            handler={navigateHandler}
+            icon={"view-dashboard"}
+            text={"admin"}
+            reverse={true}
+          />
+          <ButtonBox
+            handler={navigateHandler}
+            text={"profile"}
+            icon={"pencil"}
+          />
         </View>
       </View>
     </View>
