@@ -68,6 +68,24 @@ const Profile = () => {
             icon={"pencil"}
           />
         </View>
+        <View
+          style={{
+            flexDirection: "row",
+            margin: 10,
+            justifyContent: "space-evenly",
+          }}
+        >
+          <ButtonBox
+            handler={navigateHandler}
+            text={"password"}
+            icon={"pencil"}
+          />
+          <ButtonBox
+            handler={navigateHandler}
+            text={"sign out"}
+            icon={"exit-to-app"}
+          />
+        </View>
       </View>
     </View>
   );
