@@ -28,6 +28,16 @@ const Profile = ({ navigation }) => {
       case "Profile":
         navigation.navigate("updateprofile");
         break;
+      case "Password":
+        navigation.navigate("changepassword");
+        break;
+      case "Sign Out":
+        navigation.navigate("orders");
+        break;
+      default:
+      case "Orders":
+        navigation.navigate("orders");
+        break;
     }
   };
 
