@@ -1,11 +1,15 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { ActivityIndicator } from "react-native-paper";
+import { colors } from "../styles/styles";
 
 const Loader = () => {
   return (
-    <View>
-      <Text>Loader</Text>
-    </View>
+    <ActivityIndicator
+      style={{ top: "50%", position: "absolute", alignSelf: "center" }}
+      size={100}
+      color={colors.color3}
+    />
   );
 };
 
