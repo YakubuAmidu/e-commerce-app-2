@@ -17,6 +17,10 @@ const loading = false;
 const Profile = ({ navigation }) => {
   const [avatar, setAvatar] = useState(null);
 
+  const logoutHandler = () => {
+    console.log("Signing out...");
+  };
+
   const navigateHandler = (text) => {
     switch (text) {
       case "Admin":

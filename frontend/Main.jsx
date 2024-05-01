@@ -14,6 +14,7 @@ import ForgetPassword from "./screens/ForgetPassword.jsx";
 import Signup from "./screens/Signup.jsx";
 import Verify from "./screens/Verify.jsx";
 import Profile from "./screens/Profile.jsx";
+import UpdateProfile from "./screens/UpdateProfile";
 
 const Stack = createNativeStackNavigator();
 
