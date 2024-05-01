@@ -79,14 +79,6 @@ const UpdateProfile = ({ navigation }) => {
 
           <TextInput
             {...inputOptions}
-            secureTextEntry={true}
-            placeholder="Password..."
-            value={password}
-            onChangeText={setPassword}
-          />
-
-          <TextInput
-            {...inputOptions}
             placeholder="Addressl..."
             value={address}
             onChangeText={setAddress}
