@@ -50,18 +50,6 @@ const UpdateProfile = ({ navigation }) => {
         }}
       >
         <View style={{ minHeight: 900 }}>
-          <Avatar.Image
-            style={{ alignSelf: "center", backgroundColor: colors.color1 }}
-            size={80}
-            source={{
-              uri: avatar ? avatar : defaultImg,
-            }}
-          />
-
-          <TouchableOpacity onPress={() => navigation.navigate("camera")}>
-            <Button textColor={colors.color1}>Change photo</Button>
-          </TouchableOpacity>
-
           <TextInput
             {...inputOptions}
             placeholder="Name..."
