@@ -3,6 +3,11 @@ import { View, Text, StyleSheet } from "react-native";
 import { defautStyle, formHeading } from "../styles/styles";
 import { Avatar } from "react-native-paper";
 
+const user = {
+  name: "Yakubu",
+  email: "yakubu@gmail.com",
+};
+
 const Profile = () => {
   const [avatar, setAvatar] = useState("");
 
@@ -21,6 +26,14 @@ const Profile = () => {
           size={100}
           style={{ backgroundColor: colors.color1 }}
         />
+        <TouchableOpacity
+          onPress={
+            (() => navigation.navigate("camera"), { updateProfile: true })
+          }
+        >
+          <Button textColor={colors.color1}>Change photo</Button>
+        </TouchableOpacity>
+        <Text style={styles.name}>{user?.name}</Text>
       </View>
     </View>
   );
@@ -33,6 +46,12 @@ const styles = StyleSheet.create({
     padding: 30,
     borderRadius: 10,
     alignItems: "center",
+  },
+  name: {
+    fontSize: 20,
+    fontWeight: "500",
+    marginTop: 10,
+    color: colors.color2,
   },
 });
 
