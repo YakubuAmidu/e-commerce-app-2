@@ -11,6 +11,7 @@ import {
   formStyles as styles,
 } from "../styles/styles";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const UpdateProfile = ({ navigation }) => {
   const [avatar, setAvatar] = useState("");
@@ -35,6 +36,7 @@ const UpdateProfile = ({ navigation }) => {
 
   return (
     <View style={defaultStyle}>
+      <Header back={true} />
       {/* Heading */}
       <View style={{ marginBottom: 20 }}>
         <Text style={FormHeading}>Edit Profile</Text>
@@ -49,7 +51,7 @@ const UpdateProfile = ({ navigation }) => {
           backgroundColor: colors.color3,
         }}
       >
-        <View style={{ minHeight: 900 }}>
+        <View>
           <TextInput
             {...inputOptions}
             placeholder="Name..."
