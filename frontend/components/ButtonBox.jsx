@@ -19,8 +19,14 @@ const ButtonBox = ({
         borderRadius: 20,
         alignItems: "center",
       }}
+      onPress={() => handler(text)}
+      disabled={loading}
     >
-      <Text>ButtonBox</Text>
+      <Avatar.Icon
+        size={50}
+        color={colors.color2}
+        style={{ backgroundColor: reverse ? colors.color1 : colors.color2 }}
+      />
     </TouchableOpacity>
   );
 };
