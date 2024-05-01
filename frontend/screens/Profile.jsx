@@ -14,10 +14,22 @@ const user = {
 
 const loading = false;
 
-const Profile = () => {
-  const [avatar, setAvatar] = useState("");
+const Profile = ({ navigation }) => {
+  const [avatar, setAvatar] = useState(null);
 
-  const navigateHandler = () => {};
+  const navigateHandler = (text) => {
+    switch (text) {
+      case "Admin":
+        navigation.navigate("adminpanel");
+        break;
+      case "Orders":
+        navigation.navigate("orders");
+        break;
+      case "Profile":
+        navigation.navigate("updateprofile");
+        break;
+    }
+  };
 
   return (
     <Fragment>
