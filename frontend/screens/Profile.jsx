@@ -34,6 +34,21 @@ const Profile = () => {
           <Button textColor={colors.color1}>Change photo</Button>
         </TouchableOpacity>
         <Text style={styles.name}>{user?.name}</Text>
+        <Text style={{ fontWeight: "300", color: colors.color2 }}>
+          {user?.email}
+        </Text>
+      </View>
+
+      <View>
+        <View
+          style={{
+            flexDirection: "row",
+            margin: 10,
+            justifyContent: "space-between",
+          }}
+        >
+          
+        </View>
       </View>
     </View>
   );
