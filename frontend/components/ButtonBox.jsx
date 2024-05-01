@@ -27,6 +27,7 @@ const ButtonBox = ({
         color={colors.color2}
         style={{ backgroundColor: reverse ? colors.color1 : colors.color2 }}
       />
+      <Text style={{ color: colors.color2, textAlign: "center" }}>{text}</Text>
     </TouchableOpacity>
   );
 };
