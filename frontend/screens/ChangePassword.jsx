@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import React, { useState, Fragment } from "react";
 import { TextInput, Button } from "react-native-paper";
 
@@ -43,13 +43,6 @@ const ChangePassword = ({ navigation }) => {
           value={newPassword}
           onChange={setNewPassword}
         />
-
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigation.navigate("forgotpassword")}
-        >
-          <Text style={styles.forget}>Forgot Password ? </Text>
-        </TouchableOpacity>
 
         <Button
           loading={loading}
