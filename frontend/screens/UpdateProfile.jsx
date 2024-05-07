@@ -1,16 +1,14 @@
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React, { useState, Fragment } from "react";
-import { TextInput, Button, Avatar } from "react-native-paper";
+import { TextInput, Button } from "react-native-paper";
 
 import {
   defaultStyle,
   colors,
   FormHeading,
   inputOptions,
-  defaultImg,
   formStyles as styles,
 } from "../styles/styles";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const UpdateProfile = ({ navigation }) => {
@@ -30,7 +28,6 @@ const UpdateProfile = ({ navigation }) => {
   const submitHandler = () => {
     alert("Yeah");
     // Will remove this in the future.
-    navigation.navigate("verify");
   };
 
   return (
