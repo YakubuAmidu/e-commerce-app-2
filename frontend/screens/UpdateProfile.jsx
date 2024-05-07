@@ -17,7 +17,6 @@ const UpdateProfile = ({ navigation }) => {
   const [avatar, setAvatar] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
@@ -26,7 +25,7 @@ const UpdateProfile = ({ navigation }) => {
   const loading = false;
 
   const disableBtn =
-    !name || !email || !password || !address || !city || !country || !pinCode;
+    !name || !email || !address || !city || !country || !pinCode;
 
   const submitHandler = () => {
     alert("Yeah");
@@ -38,7 +37,7 @@ const UpdateProfile = ({ navigation }) => {
     <View style={defaultStyle}>
       <Header back={true} />
       {/* Heading */}
-      <View style={{ marginBottom: 20 }}>
+      <View style={{ marginBottom: 20, paddingTop: 70 }}>
         <Text style={FormHeading}>Edit Profile</Text>
       </View>
 
