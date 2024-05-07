@@ -13,6 +13,7 @@ const ButtonBox = ({
 }) => {
   return (
     <TouchableOpacity
+      activeOpacity={1}
       style={{
         backgroundColor: reverse ? colors.color1 : colors.color3,
         height: 80,
